@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'AngularEjemplo_03';
+
+  duplicaValor(valor:number):number{
+    return valor*2
+  }
+
+pelicula={
+  titulo: 'Como Entrenar a tu Dragón',
+  fechaLanzamiento:new Date(),
 }
+
+}
+
