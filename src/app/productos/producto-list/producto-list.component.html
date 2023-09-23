@@ -1,0 +1,66 @@
+
+
+<div class="card">
+    <div class="card-header">
+        <h3>LISTA DE PRODUCTOS</h3>
+    </div>
+
+
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-2">FILTRAR POR: </div>
+            <div class="col-md-4">
+                <input [(ngModel)]="listfliter" type="text" class="form-control" name="filter">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6"></div>
+            <h3>FILTRO: {{listfliter}}</h3>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table" *ngIf="productos.length">
+            <thead>
+                <tr>
+                    <th>
+                        <button (click)="showImage()"
+                        type="button" class="btn btn-primary">
+                        {{muestraImg? 'Ocultar ':'Mostrar '}}Imagen</button>
+                    </th>
+
+                    <th>MODELO</th>
+                    <th>DESCRIPCIÓN</th>
+                    <th>AÑO</th>
+                    <th>PRECIO</th>
+                    <th>MARCA</th>
+                    <th>COLOR</th>
+                    <th>IMAGEN</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let producto of productos">
+                    <td></td>
+                    <td>{{producto.Modelo|uppercase}}</td>
+                    <td>{{producto.Descripcion}}</td>
+                    <td>{{producto.Year}}</td>
+                    <td>{{producto.Precio}}</td>
+                    <td>{{producto.Marca}}</td>
+                    <td>{{producto.Color|uppercase}}</td>
+                    <td>
+                        <img *ngIf="muestraImg" 
+                        [src]="producto.ImagenUrl"
+                        [title]="producto.Modelo"
+                        [style.width.px]="imageWidth"
+                        [style.margin.px]="imageMargin">
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+
+
+
+</div>
