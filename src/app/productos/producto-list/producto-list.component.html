@@ -40,7 +40,7 @@
             </thead>
 
             <tbody>
-                <tr *ngFor="let producto of productos">
+                <tr *ngFor="let producto of productos | productosFilter:listfliter">
                     <td></td>
                     <td>{{producto.Modelo|uppercase}}</td>
                     <td>{{producto.Descripcion}}</td>
